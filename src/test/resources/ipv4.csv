@@ -1,0 +1,5 @@
+end of the range (decimal), identity, cidr, expected unsigned mask
+184549375, id, 10.1.0.0/8, 8
+3232236031, id, 192.168.1.0/24, 24
+3232236033, id1, 192.168.2.1/32, 32
+2147483647, id2, 1.2.3.4/1, 1

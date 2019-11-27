@@ -8,24 +8,71 @@
     <artifactId>ipranger-java</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!-- maven-compiler-plugin -->
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+
+        <org.projectlombok.lombok.version>1.18.10</org.projectlombok.lombok.version>
+        <org.lmdbjava.lmdbjava.version>0.6.3</org.lmdbjava.lmdbjava.version>
+        <io.whalebone.domain-characteristics.version>1.0.1</io.whalebone.domain-characteristics.version>
+
+        <!-- test props -->
+        <org.junit.jupiter.junit-jupiter.vesion>5.4.2</org.junit.jupiter.junit-jupiter.vesion>
+        <org.hamcrest.hamcrest.version>2.2</org.hamcrest.hamcrest.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>whalebone-github-mvn-repo</id>
+            <url>https://raw.githubusercontent.com/whalebone/mvn-repo/master</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${org.projectlombok.lombok.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.lmdbjava</groupId>
+            <artifactId>lmdbjava</artifactId>
+            <version>${org.lmdbjava.lmdbjava.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.whalebone</groupId>
+            <artifactId>domain-characteristics</artifactId>
+            <version>${io.whalebone.domain-characteristics.version}</version>
+        </dependency>
+
+        <!--test deps-->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.5.2</version>
+            <version>${org.junit.jupiter.junit-jupiter.vesion}</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-<!--        <dependency>-->
-<!--            <groupId>junit</groupId>-->
-<!--            <artifactId>junit</artifactId>-->
-<!--            <version>4.12</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
         <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.0.0-M4</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-params</artifactId>
+            <version>${org.junit.jupiter.junit-jupiter.vesion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${org.hamcrest.hamcrest.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

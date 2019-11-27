@@ -14,11 +14,22 @@
  *   limitations under the License.
  */
 
-package io.whalebone.iprangerjava;
+package io.whalebone.iprangerjava.utils;
 
 /**
  * @author Tomas Kozel
  */
-public class IpRangerImpl extends IpRanger {
-    public native int initDb(String path, boolean readOnly);
+public class CUtils {
+    private static final char NULL_CHAR = '\0';
+    public static String toCString(String string) {
+        return string + NULL_CHAR;
+    }
+
+    public static String fromCString(String string) {
+        if (string.endsWith("" + NULL_CHAR)) {
+            return string.substring(0, string.length() - 1);
+        } else {
+            return string;
+        }
+    }
 }
